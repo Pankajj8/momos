@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+ <nav class="navbar navbar-dark bg-dark">
+<ul>
+  <a href="#"><img src="https://s3-media4.fl.yelpcdn.com/bphoto/p3ORLgh51s-t1m-_j7geZQ/l.jpg" width="70" height="30"</a>&nbsp;&nbsp;&nbsp;
+  <a href="http://localhost:8000/website/homepage">Home</a>
+</ul>
+ </nav>
+
+    </head>
+
+<body background="https://st2.depositphotos.com/1747568/11982/v/950/depositphotos_119822948-stock-illustration-polygonal-light-background-can-be.jpg">
+<div class = "container">
+  <div class="row">
+    <div class="col-md-6">
+
+      {%  for  i in row %}
+<div class="card" style="width: 30rem;">
+  <ul class="list-group list-group-flush">
+
+
+
+
+      <li class="list-group-item">
+          <div class="jumbotron">
+  <h1 class="display-6">Project Details</h1>
+         </li>
+      <li class="list-group-item"><strong>Project ID --</strong>  &nbsp;&nbsp; {{i.Pid}}</li>
+      <li class="list-group-item"><strong>Project Name--</strong>  &nbsp;&nbsp;{{i.Pname }}</li>
+      <li class="list-group-item"><strong>Client Name--</strong>   &nbsp;&nbsp;{{i.Cname }}</li>
+      <li class="list-group-item"><strong>Client Details--</strong> &nbsp;&nbsp;{{i.Cdetails }}</li>
+      <li class="list-group-item"><strong>Project Description--</strong> &nbsp;&nbsp; {{i.Pdescription }}</li>
+      <li class="list-group-item"><strong>Project Deadline--</strong> &nbsp;&nbsp;{{i.Pdeadline }}</li>
+      <li class="list-group-item"><strong>Project Start date-- </strong>&nbsp;&nbsp;{{i.Pstartdate }}</li>
+      <li class="list-group-item"><strong>Project Managed by-- </strong>&nbsp;&nbsp;{{i.Pmanagedby }}</li>
+      <li class="list-group-item"><strong>Project Contract-- </strong>&nbsp;&nbsp;{{i.Pcontract }}</li>
+  </ul>
+</div>
+
+{% endfor %}
+    </div>
+ <div class="row">
+    <div class="col-md-6">
+
+
+<div class="card" style="width: 30rem;">
+  <ul class="list-group list-group-flush">
+
+       <li class="list-group-item">
+          <div class="jumbotron">
+  <h1 class="display-6">Task Details</h1>
+         </li>
+
+    <li class="list-group-item"><a href="http://localhost:8000/website/addTask" class="btn btn-primary">Add Task</a></li>
+      {% for  k in  tasks %}
+     <li class="list-group-item"><strong>Task title-- </strong>{{k.Ttitle}}  </li>
+      <li class="list-group-item"><strong>Technology--</strong> {{k.Ttechnology}} </li>
+       <li class="list-group-item"><strong>Deadline--</strong> {{k.Tdeadline}} </li>
+        <li class="list-group-item"> </li>
+
+{% endfor %}
+
+    </div>
+  </div>
+</div>
+
+  </div>
+    </body>
+</html>

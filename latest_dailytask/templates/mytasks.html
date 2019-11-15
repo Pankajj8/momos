@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet"
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+ <nav class="navbar navbar-dark bg-dark">
+<ul>
+  <a href="#"><img src="https://s3-media4.fl.yelpcdn.com/bphoto/p3ORLgh51s-t1m-_j7geZQ/l.jpg" width="70" height="30"</a>&nbsp;&nbsp;&nbsp;
+  <a href="http://localhost:8000/website/homepage">Home</a>
+</ul>
+ </nav>
+</head>
+
+<body background="https://st2.depositphotos.com/1747568/11982/v/950/depositphotos_119822948-stock-illustration-polygonal-light-background-can-be.jpg">
+
+<div class = "container">
+    <center>
+<div class="jumbotron">
+    <h1 class="display-4">My Tasks</h1></div>
+</div>
+</center>
+<div class="container">
+
+
+<table class="table table-striped">
+
+
+  <thead>
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Task Title</th>
+</tr>
+
+  </thead>
+
+<form action="http://localhost:8000/website/messages/" method="POST"> {% csrf_token %}
+
+
+
+     {% for  i  in tasks %}
+
+  <tbody>
+
+  <tr>
+      <td scope="row">{{i.Tid}}</td>
+
+      <td>{{i.Ttitle}}</td>
+
+    <td><a href="http://localhost:8000/website/taskDetail?id={{i.Tid}}"  class="btn btn-primary">View Details</a></td>
+
+    </tr>
+
+
+
+
+
+
+{% endfor %}
+
+  </tbody>
+</table>
+
+</div>
+
+</body>
+
+
+</form>
+</html>
+
+
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+ <nav class="navbar navbar-dark bg-dark">
+<ul>
+  <a href="#"><img src="https://s3-media4.fl.yelpcdn.com/bphoto/p3ORLgh51s-t1m-_j7geZQ/l.jpg" width="70" height="30"</a>&nbsp;&nbsp;&nbsp;
+  <a href="http://localhost:8000/website/homepage">Home</a>
+</ul>
+ </nav>
+
+</head>
+
+
+
+<body background="https://st2.depositphotos.com/1747568/11982/v/950/depositphotos_119822948-stock-illustration-polygonal-light-background-can-be.jpg">
+
+<p></p>
+
+<center><h1 class="display-4"><strong>View All Projects</strong></h1></center>
+<p></p>
+<br><br>
+
+<table class="table table-striped">
+
+
+  <thead>
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Project Name</th>
+      <th scope="col">Client Name</th>
+      <th scope="col">Status</th>
+    </tr>
+
+  </thead>
+
+
+ {% for  i  in  project %}
+
+
+  <tbody>
+
+
+    <tr>
+      <td scope="row">{{i.Pid}}</td>
+
+      <td>{{i.Pname}}</td>
+      <td>{{i.Cname}}</td>
+      <td><p>Status  :
+       {% if  i.Pstatus ==  0 %}
+      <label for="Done"><font color="green">Done</font></label>
+       {% endif %}
+ {% if  i.Pstatus == 1 %}
+      <label for="Pending"><font color="orange">Pending</font></label>
+  {% endif %}
+
+ {% if  i.Pstatus == 2 %}
+      <label for="Failed"><font color="Red">Failed</font></label>
+
+      {% endif %}
+      </p></td>
+      <td><a href="http://localhost:8000/website/projectDetail?id={{i.Pid}}" class="btn btn-primary">View Details</a></td>
+
+    </tr>
+
+
+
+
+  </div>
+</div>
+</div>
+
+{%  endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
